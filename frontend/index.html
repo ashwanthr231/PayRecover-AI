@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        PayRecover AI | Intelligent Revenue Recovery
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                PR
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    PayRecover AI
+                </h1>
+
+                <span>
+                    Intelligent Revenue Recovery
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                <span>
+                    System Operational
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN DASHBOARD
+    ====================================================== -->
+
+    <main class="dashboard">
+
+
+        <!-- =================================================
+             HERO SECTION
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    AI-POWERED PAYMENT INTELLIGENCE
+                </span>
+
+                <h2>
+                    Recover failed payments.
+                    <span>
+                        Protect revenue.
+                    </span>
+                </h2>
+
+                <p>
+                    PayRecover AI diagnoses payment failures,
+                    predicts recovery probability and executes
+                    safe recovery strategies automatically.
+                </p>
+
+            </div>
+
+
+            <div class="hero-badge">
+
+                <div class="ai-pulse">
+                    AI
+                </div>
+
+                <div>
+
+                    <strong>
+                        AI Recovery Engine
+                    </strong>
+
+                    <span>
+                        Diagnosis • Prediction • Recovery
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ANALYTICS
+        ================================================== -->
+
+        <section class="analytics">
+
+
+            <!-- TOTAL PAYMENTS -->
+
+            <div class="metric-card">
+
+                <div class="metric-label">
+                    Total Payments
+                </div>
+
+                <div
+                    class="metric-value"
+                    id="totalPayments"
+                >
+                    0
+                </div>
+
+                <div class="metric-description">
+                    Payments analyzed
+                </div>
+
+            </div>
+
+
+            <!-- FAILED PAYMENTS -->
+
+            <div class="metric-card">
+
+                <div class="metric-label">
+                    Failed Payments
+                </div>
+
+                <div
+                    class="metric-value"
+                    id="failedPayments"
+                >
+                    0
+                </div>
+
+                <div class="metric-description">
+                    Revenue at risk
+                </div>
+
+            </div>
+
+
+            <!-- RECOVERED PAYMENTS -->
+
+            <div class="metric-card">
+
+                <div class="metric-label">
+                    Recovered Payments
+                </div>
+
+                <div
+                    class="metric-value success"
+                    id="recoveredPayments"
+                >
+                    0
+                </div>
+
+                <div class="metric-description">
+                    Successfully recovered
+                </div>
+
+            </div>
+
+
+            <!-- RECOVERY RATE -->
+
+            <div class="metric-card">
+
+                <div class="metric-label">
+                    Recovery Rate
+                </div>
+
+                <div
+                    class="metric-value"
+                    id="recoveryRate"
+                >
+                    0%
+                </div>
+
+                <div class="metric-description">
+                    Overall recovery performance
+                </div>
+
+            </div>
+
+
+            <!-- FAILED AMOUNT -->
+
+            <div class="metric-card">
+
+                <div class="metric-label">
+                    Failed Amount
+                </div>
+
+                <div
+                    class="metric-value"
+                    id="failedAmount"
+                >
+                    ₹0
+                </div>
+
+                <div class="metric-description">
+                    Total revenue at risk
+                </div>
+
+            </div>
+
+
+            <!-- RECOVERED AMOUNT -->
+
+            <div class="metric-card highlight">
+
+                <div class="metric-label">
+                    Revenue Recovered
+                </div>
+
+                <div
+                    class="metric-value success"
+                    id="recoveredAmount"
+                >
+                    ₹0
+                </div>
+
+                <div class="metric-description">
+                    Revenue successfully protected
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ANALYTICS GRID
+        ================================================== -->
+
+        <section class="analytics-grid">
+
+
+            <!-- RECOVERY OVERVIEW -->
+
+            <div class="panel chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            PERFORMANCE
+                        </span>
+
+                        <h2>
+                            Recovery Overview
+                        </h2>
+
+                    </div>
+
+                    <div class="panel-icon">
+                        ↗
+                    </div>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas
+                        id="recoveryChart"
+                    ></canvas>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAILURE ANALYTICS -->
+
+            <div class="panel chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="panel-eyebrow">
+                            FAILURE INTELLIGENCE
+                        </span>
+
+                        <h2>
+                            Failure Analytics
+                        </h2>
+
+                    </div>
+
+                    <div class="panel-icon">
+                        ◉
+                    </div>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas
+                        id="failureChart"
+                    ></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ANALYZE PAYMENT
+        ================================================== -->
+
+        <section class="panel analysis-form-panel">
+
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        AI ANALYSIS ENGINE
+                    </span>
+
+                    <h2>
+                        Analyze Payment
+                    </h2>
+
+                    <p class="panel-description">
+                        
+                        Submit a failed payment and let the AI
+                        determine the safest recovery strategy.
+
+                    </p>
+
+                </div>
+
+
+                <div class="ai-status">
+
+                    <span class="status-dot"></span>
+
+                    AI Ready
+
+                </div>
+
+            </div>
+
+
+            <form id="paymentForm">
+
+
+                <div class="form-section-title">
+                    Payment Information
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <!-- PAYMENT ID -->
+
+                    <div class="input-group">
+
+                        <label for="payment_id">
+                            Payment ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="payment_id"
+                            placeholder="e.g. pay_001"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- MERCHANT ID -->
+
+                    <div class="input-group">
+
+                        <label for="merchant_id">
+                            Merchant ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="merchant_id"
+                            placeholder="e.g. merchant_001"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- CUSTOMER ID -->
+
+                    <div class="input-group">
+
+                        <label for="customer_id">
+                            Customer ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customer_id"
+                            placeholder="e.g. customer_001"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- AMOUNT -->
+
+                    <div class="input-group">
+
+                        <label for="amount">
+                            Payment Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            placeholder="Enter amount"
+                            min="1"
+                            step="0.01"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PAYMENT METHOD -->
+
+                    <div class="input-group">
+
+                        <label for="payment_method">
+                            Payment Method
+                        </label>
+
+                        <select
+                            id="payment_method"
+                            required
+                        >
+
+                            <option value="">
+                                Select payment method
+                            </option>
+
+                            <option value="UPI">
+                                UPI
+                            </option>
+
+                            <option value="CARD">
+                                Card
+                            </option>
+
+                            <option value="NETBANKING">
+                                Net Banking
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- FAILURE CODE -->
+
+                    <div class="input-group">
+
+                        <label for="failure_code">
+                            Failure Code
+                        </label>
+
+                        <select
+                            id="failure_code"
+                            required
+                        >
+
+                            <option value="">
+                                Select failure code
+                            </option>
+
+                            <option value="BANK_TIMEOUT">
+                                Bank Timeout
+                            </option>
+
+                            <option value="NETWORK_ERROR">
+                                Network Error
+                            </option>
+
+                            <option value="GATEWAY_TIMEOUT">
+                                Gateway Timeout
+                            </option>
+
+                            <option value="INSUFFICIENT_FUNDS">
+                                Insufficient Funds
+                            </option>
+
+                            <option value="CARD_DECLINED">
+                                Card Declined
+                            </option>
+
+                            <option value="FRAUD_SUSPECTED">
+                                Fraud Suspected
+                            </option>
+
+                            <option value="INVALID_CARD">
+                                Invalid Card
+                            </option>
+
+                            <option value="EXPIRED_CARD">
+                                Expired Card
+                            </option>
+
+                            <option value="INVALID_ACCOUNT">
+                                Invalid Account
+                            </option>
+
+                            <option value="ACCOUNT_BLOCKED">
+                                Account Blocked
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- ATTEMPT NUMBER -->
+
+                    <div class="input-group">
+
+                        <label for="attempt_number">
+                            Attempt Number
+                        </label>
+
+                        <input
+                            type="number"
+                            id="attempt_number"
+                            placeholder="Attempt number"
+                            value="1"
+                            min="1"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORM ACTION -->
+
+                <div class="form-action">
+
+                    <button
+                        type="submit"
+                        class="analyze-button"
+                    >
+
+                        <span>
+                            ✦
+                        </span>
+
+                        Analyze Payment
+
+                    </button>
+
+                    <p>
+                        AI diagnosis and safety checks will run
+                        automatically.
+                    </p>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- =================================================
+             ANALYSIS RESULT
+        ================================================== -->
+
+        <section class="panel result-panel">
+
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        AI DECISION
+                    </span>
+
+                    <h2>
+                        Analysis Result
+                    </h2>
+
+                </div>
+
+
+                <div class="result-live">
+                    LIVE
+                </div>
+
+            </div>
+
+
+            <div id="analysisResult">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        AI
+                    </div>
+
+                    <h3>
+                        Waiting for payment analysis
+                    </h3>
+
+                    <p>
+                        Submit a failed payment above to see
+                        diagnosis, recovery probability,
+                        safety checks and the recommended action.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PAYMENT HISTORY
+        ================================================== -->
+
+        <section class="panel history-panel">
+
+
+            <!-- HISTORY HEADER -->
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="panel-eyebrow">
+                        TRANSACTION MONITORING
+                    </span>
+
+                    <h2>
+                        Payment History
+                    </h2>
+
+                    <p class="panel-description">
+                        Search and monitor analyzed payment
+                        transactions.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="refresh-button"
+                    id="refreshPayments"
+                >
+
+                    ↻
+
+                    Refresh
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 HISTORY FILTERS
+            ================================================== -->
+
+            <div class="history-filters">
+
+
+                <!-- SEARCH -->
+
+                <div class="history-search">
+
+                    <label for="paymentSearch">
+                        Search
+                    </label>
+
+                    <div class="search-input-wrapper">
+
+                        <span class="search-icon">
+                            ⌕
+                        </span>
+
+                        <input
+                            type="text"
+                            id="paymentSearch"
+                            placeholder="Payment ID, customer ID or merchant ID..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECOVERY FILTER -->
+
+                <div class="filter-group">
+
+                    <label for="recoveryFilter">
+                        Recovery Status
+                    </label>
+
+                    <select id="recoveryFilter">
+
+                        <option value="ALL">
+                            All Statuses
+                        </option>
+
+                        <option value="SUCCESS">
+                            Success
+                        </option>
+
+                        <option value="NOT RECOVERED">
+                            Not Recovered
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- FAILURE FILTER -->
+
+                <div class="filter-group">
+
+                    <label for="failureFilter">
+                        Failure Class
+                    </label>
+
+                    <select id="failureFilter">
+
+                        <option value="ALL">
+                            All Classes
+                        </option>
+
+                        <option value="TRANSIENT">
+                            Transient
+                        </option>
+
+                        <option value="CUSTOMER_ACTION">
+                            Customer Action
+                        </option>
+
+                        <option value="RISK">
+                            Risk
+                        </option>
+
+                        <option value="PERMANENT">
+                            Permanent
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- METHOD FILTER -->
+
+                <div class="filter-group">
+
+                    <label for="methodFilter">
+                        Payment Method
+                    </label>
+
+                    <select id="methodFilter">
+
+                        <option value="ALL">
+                            All Methods
+                        </option>
+
+                        <option value="UPI">
+                            UPI
+                        </option>
+
+                        <option value="CARD">
+                            Card
+                        </option>
+
+                        <option value="NETBANKING">
+                            Net Banking
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- RESET FILTERS -->
+
+                <button
+                    type="button"
+                    id="resetFilters"
+                    class="reset-filter-button"
+                >
+
+                    Reset
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 RESULTS INFORMATION
+            ================================================== -->
+
+            <div class="history-results-info">
+
+                <span>
+
+                    Showing
+
+                    <strong id="historyCount">
+                        0
+                    </strong>
+
+                    payments
+
+                </span>
+
+
+                <span class="history-filter-status">
+
+                    Filters update automatically
+
+                </span>
+
+            </div>
+
+
+            <!-- =================================================
+                 PAYMENT TABLE
+            ================================================== -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Payment ID
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                            <th>
+                                Method
+                            </th>
+
+                            <th>
+                                Failure
+                            </th>
+
+                            <th>
+                                Diagnosis
+                            </th>
+
+                            <th>
+                                Policy
+                            </th>
+
+                            <th>
+                                Safety
+                            </th>
+
+                            <th>
+                                Recovery
+                            </th>
+
+                            <th>
+                                Recovered Amount
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="paymentTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div>
+
+            <strong>
+                PayRecover AI
+            </strong>
+
+            <span>
+                Intelligent Payment Recovery System
+            </span>
+
+        </div>
+
+
+        <span>
+            AI-powered • Safe • Automated
+        </span>
+
+    </footer>
+
+
+    <!-- =====================================================
+         CHART.JS
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"
+    ></script>
+
+
+    <!-- =====================================================
+         APPLICATION JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
